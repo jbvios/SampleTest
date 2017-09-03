@@ -30,4 +30,4 @@ jobs:
           name: Install project dependencies
           command: php composer.phar install
 
-      - run: phpunit
+      - run: ./vendor/bin/phpunit
