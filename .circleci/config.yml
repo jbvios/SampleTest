@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: SampleTest
+    working_directory: ~/SampleTest
     docker:
       - image: php:7.1-apache
         environment:
