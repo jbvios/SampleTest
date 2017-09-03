@@ -14,12 +14,17 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mysql:9.4
 
+       timezone:
+          Asia/Manila
+
     working_directory: ~/SampleTest
 
-    steps:
-      - checkout
 
-    
+dependencies:
+  override:
 
-      # run tests!
-      - run: phpunit
+    - composer install --prefer-source --no-interaction
+    - npm install
+test:
+  override:
+    - vendor/bin/phpunit
