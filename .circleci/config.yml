@@ -1,21 +1,15 @@
-machine:
-  timezone:
-    Europe/London
-  php:
-    version: 7.0.4
-  node:
-    version: 6.9.1
+ machine:
+      timezone:
+        Asia/Manila
+      php:
+        version:  7.0.4
+      environment:
+        ENVIRONMENT: development
 
-       timezone:
-          Asia/Manila
-
-    working_directory: ~/SampleTest
-
-
-dependencies:
-  override:
-    - composer install --prefer-source --no-interaction
-    - npm install
-test:
-  override:
-    - vendor/bin/phpunit
+    dependencies:
+      override:
+        - composer install --prefer-source --no-interaction
+      post:
+    test:
+      override:
+    - phpunit
