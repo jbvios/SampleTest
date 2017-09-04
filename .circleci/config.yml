@@ -41,5 +41,4 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
 
       # run tests!
-      - run: php artisan key:generate
       - run: vendor/bin/phpunit
