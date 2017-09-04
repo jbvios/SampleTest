@@ -34,6 +34,8 @@ jobs:
       - run: sudo mv composer.phar /usr/local/bin/composer
 
       - run: composer install -n --prefer-dist
+      - run: cp .env.circle to .env
+      - run: php artisan key:generate
 
       - save_cache:
           paths:
