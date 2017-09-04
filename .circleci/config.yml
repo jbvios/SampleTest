@@ -34,11 +34,12 @@ jobs:
       - run: sudo mv composer.phar /usr/local/bin/composer
 
       - run: composer install -n --prefer-dist
-      - run: php artisan key:generate
+
       - save_cache:
           paths:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
 
       # run tests!
+      - run: php artisan key:generate
       - run: vendor/bin/phpunit
